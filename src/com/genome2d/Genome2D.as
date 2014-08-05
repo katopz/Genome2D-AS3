@@ -5,6 +5,7 @@ import com.genome2d.context.GContextConfig;
 import com.genome2d.context.IContext;
 import com.genome2d.error.GError;
 import com.genome2d.node.GNode;
+import com.genome2d.physics.GPhysics;
 import com.genome2d.signals.GMouseSignal;
 import com.genome2d.textures.factories.GTextureAtlasFactory;
 import com.genome2d.textures.factories.GTextureFactory;
@@ -40,7 +41,7 @@ public class Genome2D
 
 
     // Physics instance
-	//public var physics:GPhysics;
+	public static var physics:GPhysics;
 
     // Genome2D signals
     private var g2d_onInitialized:Signal;
@@ -198,11 +199,9 @@ public class Genome2D
         g2d_currentFrameDeltaTime = p_deltaTime;
         onUpdate.dispatch(g2d_currentFrameDeltaTime);
 
-        /*
-		if (physics != null && g2d_currentDeltaTime > 0) {
-			physics.step(g2d_currentDeltaTime);
+		if (physics != null && g2d_currentFrameDeltaTime > 0) {
+			physics.step(g2d_currentFrameDeltaTime);
 		}
-		/**/
 	}
 
     /**

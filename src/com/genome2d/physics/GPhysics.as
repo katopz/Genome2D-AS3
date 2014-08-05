@@ -6,7 +6,7 @@ package com.genome2d.physics {
  */
 public class GPhysics
 {
-	private var g2d_running:Boolean = true;
+	protected var g2d_running:Boolean = true;
 	
 	public var minimumTimeStep:int = 0;
 	

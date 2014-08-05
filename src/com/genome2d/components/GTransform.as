@@ -251,13 +251,16 @@ public class GTransform extends GComponent
 	}
 	
 	public function invalidate(p_invalidateTransform:Boolean, p_invalidateColor:Boolean):void {
-        var parentTransform:GTransform = node.parent.transform;
+        var parentTransform:GTransform;
+		
+		if(node.parent)
+			parentTransform = node.parent.transform;
 
         if (node.g2d_body != null && node.g2d_body.isDynamic()) {
             x = node.g2d_body.x;
             y = node.g2d_body.y;
             rotation = node.g2d_body.rotation;
-        } else {
+        } else if(parentTransform){
             if (p_invalidateTransform && !useWorldSpace) {
                 if (parentTransform.g2d_worldRotation != 0) {
                     var cos:Number = Math.cos(parentTransform.g2d_worldRotation);

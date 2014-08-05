@@ -57,5 +57,8 @@ public class GBody extends GComponent
 		super(p_node);
 	}
 	
+	public function update(p_deltaTime:Number, invalidateTransform:Boolean, invalidateColor:Boolean):void {
+		
+	}
 }
 }

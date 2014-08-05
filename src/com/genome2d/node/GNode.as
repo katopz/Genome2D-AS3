@@ -184,7 +184,8 @@ public class GNode
                 g2d_transform.invalidate(p_parentTransformUpdate, p_parentColorUpdate);
             }
 
-            //if (g2d_body != null) g2d_body.update(p_deltaTime, invalidateTransform, invalidateColor);
+            if (g2d_body != null) 
+				g2d_body.update(context.g2d_currentDeltaTime, invalidateTransform, invalidateColor);
 
             if (!g2d_active || !g2d_transform.visible || ((cameraGroup&p_camera.mask) == 0 && cameraGroup != 0)) return;
 
